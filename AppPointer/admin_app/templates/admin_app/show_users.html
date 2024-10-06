@@ -1,0 +1,14 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+    <h2>All Users</h2>
+    <div class="show-user">
+        {% for user in users %}
+            {% if user.username != "admin" %}
+                <h3>{{ user.username }}</h3>
+                <a href="{% url 'admin_app:user_data' id=user.id %}">user detail</a>
+                <p>{{ user.app_points }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

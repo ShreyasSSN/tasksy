@@ -1,0 +1,21 @@
+{% extends 'user_base_layout.html' %}
+
+{% block user_content %}
+    <h1>App Detail</h1>
+    <div class="user-app-detail">
+        <div class="app">
+            <h2>{{ app.app_name }}</h2>
+            <a href="{{ app.app_link }}" target="_blank" rel="noopener noreferrer">{{ app.app_link }}</a>
+            <p>{{ app.app_points }}</p>
+            {% if screenshot %}
+                <img src="{{ screenshot.screenshot.url }}" alt="Screenshot">
+            {% else %}
+                <form class="dropzone" action="{% url 'user_app:detail' slug=app.app_slug %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Load Screenshot">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

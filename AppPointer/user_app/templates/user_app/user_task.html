@@ -1,0 +1,17 @@
+{% extends 'user_base_layout.html' %}
+
+{% block user_content %}
+    <h1>User Points</h1>
+    <div class="user-tasks">
+        <h2>Tasks to be completed</h2>  
+        <div class="all-apps">
+            {% for app in apps_list %}
+            <div class="app-list">
+                <h2>{{ app.app_name }}</h2>
+                <a href="{% url 'user_app:detail' slug=app.app_slug %}">View in detail</a>
+                <p>{{ app.app_points }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

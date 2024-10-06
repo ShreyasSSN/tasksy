@@ -1,0 +1,14 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+    <h1>All Apps</h1>
+    <div class="show-app">
+        {% for app in app_list %}
+            <div class="app-list">
+                <h2>{{ app.app_name }}</h2>
+                <a href="{% url 'admin_app:detail' slug=app.app_slug %}">View in detail</a>
+                <p>Added on {{ app.datetime }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

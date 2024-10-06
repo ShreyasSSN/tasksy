@@ -1,0 +1,984 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+}
+
+header {
+    background-color: #dfe6ed;
+    padding: 20px;
+    text-align: center;
+    color: black;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 10px 0; /* Space between each button */
+    width: 100%; /* Full width of the parent container */
+}
+
+nav ul li a {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #e74c3c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 200px; /* Set a fixed width for the buttons */
+}
+
+nav ul li a:hover {
+    background-color: #c0392b;
+}
+
+/* Wrapper layout */
+.wrapper {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.admin-base-layout {
+    width: 250px;
+    background-color: #dfe6ec;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-base-layout li {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.admin-base-layout li a {
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #6a5acd;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.admin-base-layout li a:hover {
+    background-color: #483d8b;
+}
+
+.add-app {
+
+    margin-left: 50px;
+
+    width: 100%;
+
+}
+
+
+
+.add-app h2 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 24px;
+
+}
+
+
+
+.site-form {
+
+    width: 60%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr; /* Two columns */
+
+    grid-gap: 20px;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.site-form input,
+
+.site-form select {
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Position the fields */
+
+.site-form input[name="app_name"],
+
+.site-form input[name="app_link"] {
+
+    grid-column: 1; /* Left side */
+
+}
+
+
+
+.site-form select[name="app_category"],
+
+.site-form select[name="app_sub_category"] {
+
+    grid-column: 2; /* Right side */
+
+}
+
+
+
+.site-form input[name="app_points"] {
+
+    grid-column: span 2; /* Center below the four fields */
+
+}
+
+
+
+#submit-button {
+
+    background-color: #f39c12;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    width: 50%;
+
+    grid-column: span 2; /* Center the submit button */
+
+}
+
+
+
+#submit-button:hover {
+
+    background-color: #e67e22;
+
+}
+
+
+
+/* Points Button */
+
+#points-button {
+
+    background-color: #48c78e;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    width: 50%;
+
+    grid-column: span 2; /* Center the points button as well */
+
+}
+
+
+
+#points-button:hover {
+
+    background-color: #3bb47b;
+
+}
+
+
+
+/* Admin Home Specific */
+
+.admin-home-container {
+
+    text-align: center;
+
+    padding: 50px;
+
+    background-color: white;
+
+    margin: 50px auto;
+
+    width: 60%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+}
+
+
+
+.admin-home-container img {
+
+    width: 150px;
+
+    height: 150px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.admin-home-container input {
+
+    border: 2px solid #7b68ee;
+
+    padding: 10px;
+
+    border-radius: 4px;
+
+}
+
+
+
+.admin-home-container select {
+
+    border: 2px solid #7b68ee;
+
+    padding: 10px;
+
+    border-radius: 4px;
+
+}
+
+
+
+/* Center and style the points section */
+
+.points-submit-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #48c78e; /* Green background for points section */
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+
+    width: 100%;
+
+}
+
+
+
+/* Center the "Points" label or input */
+
+.points-submit-container input[type="number"] {
+
+    width: 50%;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    border: 2px solid #fff; /* Optional: white border for better visibility */
+
+    padding: 10px;
+
+    font-size: 18px;
+
+    border-radius: 8px;
+
+    background-color: #f4f7f9;
+
+}
+
+
+
+/* Adjust submit button styles */
+
+.points-submit-container input[type="submit"] {
+
+    background-color: #f39c12;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    width: 50%;
+
+}
+
+
+
+.points-submit-container input[type="submit"]:hover {
+
+    background-color: #e67e22;
+
+}
+
+
+
+
+
+.admin-home {
+
+    text-align: center;
+
+    padding: 50px;
+
+    background-color: white;
+
+    margin: 50px auto;
+
+    width: 60%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+}
+
+
+
+.admin-home h2 {
+
+    font-size: 28px;
+
+    color: #333;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.admin-home li {
+
+    list-style: none;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.admin-home li a {
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background-color: #3498db;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+}
+
+
+
+.admin-home li a:hover {
+
+    background-color: #2980b9;
+
+}
+
+
+
+.admin-app-detail {
+
+    width: 60%;
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+}
+
+
+
+.admin-app-detail h2 {
+
+    font-size: 24px;
+
+    color: #333;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.admin-app-detail a {
+
+    display: inline-block;
+
+    font-size: 18px;
+
+    color: #3498db;
+
+    margin-bottom: 10px;
+
+    text-decoration: none;
+
+}
+
+
+
+.admin-app-detail p {
+
+    font-size: 18px;
+
+    color: #666;
+
+}
+
+
+
+.admin-app-detail form {
+
+    margin-top: 20px;
+
+}
+
+
+
+.admin-app-detail form input[type="submit"] {
+
+    background-color: #e74c3c;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+
+.admin-app-detail form input[type="submit"]:hover {
+
+    background-color: #c0392b;
+
+}
+
+
+
+.show-app {
+
+    width: 80%;
+
+    margin: 30px auto;
+
+}
+
+
+
+.app-list {
+
+    background-color: white;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+}
+
+
+
+.app-list h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.app-list a {
+
+    display: inline-block;
+
+    font-size: 16px;
+
+    color: #3498db;
+
+    margin-bottom: 5px;
+
+    text-decoration: none;
+
+}
+
+
+
+.app-list a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+.app-list p {
+
+    font-size: 16px;
+
+    color: #666;
+
+}
+
+
+
+.show-user {
+
+    width: 80%;
+
+    margin: 30px auto;
+
+}
+
+
+
+.show-user h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.show-user a {
+
+    display: inline-block;
+
+    font-size: 16px;
+
+    color: #3498db;
+
+    margin-bottom: 5px;
+
+    text-decoration: none;
+
+}
+
+
+
+.show-user a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+.show-user p {
+
+    font-size: 16px;
+
+    color: #666;
+
+}
+
+
+
+.admin-app-detail {
+
+    width: 60%;
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+}
+
+
+
+.admin-app-detail h2 {
+
+    font-size: 24px;
+
+    color: #333;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.user-data {
+
+    margin-top: 20px;
+
+    background-color: #f4f7f9;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+}
+
+
+
+.user-data h3 {
+
+    font-size: 20px;
+
+    color: #333;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.user-data img {
+
+    width: 100px;
+
+    height: 100px;
+
+    margin-bottom: 10px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+}
+
+
+
+.user-data p {
+
+    font-size: 16px;
+
+    color: #666;
+
+}
+
+
+
+.admin-app-detail form input[type="submit"] {
+
+    background-color: #e74c3c;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+}
+
+
+
+.admin-app-detail form input[type="submit"]:hover {
+
+    background-color: #c0392b;
+
+}
+
+
+/* User welcome section */
+.user-welcome {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 20px;
+    color: #34495E;
+}
+
+/* Main content layout */
+.main-content {
+    padding: 20px;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    background-color: #f4f7f9;
+}
+
+/* App Cards */
+.app-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.app-info {
+    border: 2px solid #020;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.app-info h2 {
+    font-size: 18px;
+    margin-left: 15px;
+    color: #34495E;
+}
+
+.app-info a {
+    font-size: 14px;
+    color: #3498db;
+    margin-left: 15px;
+}
+
+.app-info a:hover {
+    text-decoration: underline;
+}
+
+/* Points Button */
+.points-btn {
+    position: absolute;
+    right: 100px;
+    background-color: #48c78e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.points-btn:hover {
+    background-color: #3bb47b;
+}
+
+/* App Detail Styling */
+.user-app-detail {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.app h2 {
+    font-size: 22px;
+    color: #34495E; /* Darker text for app name */
+}
+
+.app a {
+    display: block;
+    color: #3498db; /* Light blue link */
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.app a:hover {
+    text-decoration: underline;
+}
+
+.app p {
+    color: black; /* Black text for points */
+    margin-top: 8px;
+}
+
+form.dropzone {
+    margin-top: 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* User Points Styling */
+.user-points {
+    background-color: #7FFF00; /* Parrot green background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-points h2 {
+    font-size: 20px;
+    color: #34495E;
+    margin-bottom: 10px;
+}
+
+.user-points p {
+    font-size: 16px;
+    color: black; /* Black text for app names and points */
+    margin-bottom: 8px;
+}
+
+/* User Profile Styling */
+.user-profile {
+    background-color: #7FFF00; /* Parrot green background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-profile h2 {
+    font-size: 20px;
+    color: #34495E;
+}
+
+.user-profile p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding-left: 0;
+}
+
+ul p {
+    font-size: 16px;
+    color: black;
+}
+
+/* User Tasks Styling */
+.user-tasks {
+    background-color: #7FFF00; /* Parrot green background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-tasks h2 {
+    font-size: 20px;
+    color: #34495E;
+}
+
+.app-list {
+    margin-bottom: 20px;
+}
+
+.app-list h2 {
+    font-size: 18px;
+    color: #34495E;
+    margin-bottom: 5px;
+}
+
+.app-list a {
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.app-list a:hover {
+    text-decoration: underline;
+}
+
+.app-list p {
+    font-size: 16px;
+    color: black;
+    margin-top: 5px;
+}
+

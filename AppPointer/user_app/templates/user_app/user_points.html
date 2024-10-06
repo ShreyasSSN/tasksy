@@ -1,0 +1,14 @@
+{% extends 'user_base_layout.html' %}
+
+{% block user_content %}
+    <h1>User Points</h1>
+    <div class="user-points">
+        <h2>Name : {{ user }}</h2>
+        <h2>Points gained: {{ total_points }}</h2>    
+        <ul>
+            {% for data in user_data %}
+                <p>{{ data.app_name }} : {{ data.points }}</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

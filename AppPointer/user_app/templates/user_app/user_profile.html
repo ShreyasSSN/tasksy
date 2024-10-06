@@ -1,0 +1,14 @@
+{% extends 'user_base_layout.html' %}
+
+{% block user_content %}
+    <h1>User Profile</h1>
+    <div class="user-profile">
+        <h2>Name : {{ user }}</h2>
+        <h3>Apps downloaded</h3>
+        <ul>
+            {% for data in user_data %}
+                <p>{{ data.app_name }}</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

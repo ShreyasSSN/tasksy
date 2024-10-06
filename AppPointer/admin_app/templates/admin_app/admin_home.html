@@ -1,0 +1,9 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+    <div class="admin-home">
+        <h2>This is admin homepage</h2>
+        <li><a href="{% url 'admin_app:show_apps' %}" method="get">Show all apps</a></li>
+        <li><a href="{% url 'admin_app:show_users' %}" method="get">Show all users</a></li>
+    </div>
+{% endblock %}

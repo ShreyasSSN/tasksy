@@ -1,0 +1,10 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <div class="admin-base-layout">
+        <li><a href="{% url 'admin_app:add_app' %}" method="get">Add App</a></li>
+        <li><a href="{% url 'admin_app:home' %}" method="get">Home</a></li>
+    </div>
+    {% block admin_content%}
+    {% endblock%}
+{% endblock %}

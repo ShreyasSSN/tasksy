@@ -1,0 +1,16 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+    <h1>App Detail</h1>
+    <div class="admin-app-detail">
+        <div class="app">
+            <h2>{{ app.app_name }}</h2>
+            <a href="{{ app.app_link }}" target="_blank" rel="noopener noreferrer">{{ app.app_link }}</a>
+            <p>{{ app.app_points }}</p>
+            <form action="{% url 'admin_app:app_delete' app.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="submit" value="Delete App" onclick="return confirm('Are you sure you want to delete this app?');">
+            </form>
+        </div>
+    </div>
+{% endblock %}

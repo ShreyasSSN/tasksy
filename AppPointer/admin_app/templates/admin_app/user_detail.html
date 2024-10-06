@@ -1,0 +1,27 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+    <h1>App Detail</h1>
+    <div class="app-detail">
+        <div class="app">
+            <h2>{{ user }}</h2>
+            <p>{{ points }}</p>
+            {% for data in user_data_list %}
+                <div class="user-data">
+                    <h3>{{ data.app_name }}</h3>
+                    {% if data.screenshot %}
+                        <img src="{{ data.screenshot.url }}">
+                    {% else %}
+                        <p>screenshot not uploaded</p>
+                    {% endif %}
+                    <p>Points gained : {{ data.points }}</p>
+                    <p>Uploaded on : {{ data.upload_time }}</p>
+                </div>
+            {% endfor %}
+            <form action="{% url 'admin_app:delete_user' id=user.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="submit" value="Delete User" onclick="return confirm('Are you sure you want to delete this app?');">
+            </form>
+        </div>
+    </div>
+{% endblock %}

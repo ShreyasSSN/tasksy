@@ -1,0 +1,13 @@
+{% extends 'admin_base_layout.html' %}
+
+{% block admin_content %}
+<div class="admin-home-container">
+    <h2>Add your app</h2>
+    <form class="site-form" action="{% url 'admin_app:add_app' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" id="submit-button" value="SUBMIT" style="display: none;">
+    </form>
+</div>
+<script src="/static/toggleSubmitButton.js"></script>
+{% endblock %}

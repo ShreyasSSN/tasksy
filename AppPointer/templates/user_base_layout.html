@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <header>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}. Refresh to remove the error message</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <nav>
+            <ul>
+                <li><a href="{% url 'user_app:home' %}" method="get">Home</a></li>
+                <li><a href="{% url 'user_app:profile' %}" method="get">profile</a></li>
+                <li><a href="{% url 'user_app:points' %}" method="get">points</a></li>
+                <li><a href="{% url 'user_app:tasks' %}" method="get">Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block user_content%}
+    {% endblock%}
+{% endblock %}
